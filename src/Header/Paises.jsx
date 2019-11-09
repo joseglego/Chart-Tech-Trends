@@ -16,8 +16,9 @@ const Paises = React.memo((props) => (
           {(context) => (
               <div className="paises">
                 <SingleSelect
+                  label="País"
+                  placeholder="País"
                   defaultValue='CL'
-                  placeholder="País" 
                   options={countries}
                   onChange={country => context.setPais(country)}   
                   style={{ width: 100 }}
