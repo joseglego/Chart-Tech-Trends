@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { MultipleSelect } from "react-select-material-ui";
 import CommonSection from './CommonSection';
@@ -7,6 +7,14 @@ import skillsData from '../data';
 import './CompareSkills.scss';
 
 const CompareSection = ({ skills, onChange, procesadoAcumulado, procesadoPorMes, procesadoSalarios }) => {
+  useEffect(() => {
+    const providedSkills = window.location.pathname.substr(1).split('-vs-');
+
+    if (providedSkills.length >= 2 && providedSkills.length !== skills.length) {
+      onChange(providedSkills)
+    }
+  });
+
   const definedDatasets = [
     skillsData.languages,
     skillsData.database,
