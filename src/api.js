@@ -13,7 +13,7 @@ const agrupadoPorMes = (pais) => {
       }
     }`
   }).then(res => {
-    return res.data.data.LaboralAgrupadoPorMes
+    return res.data.data.LaboralAgrupadoPorMes.map(element => ({ ...element, skill: element.skill.toLowerCase()}))
   }).catch(error => {
     console.log(error)
     return []
@@ -29,7 +29,7 @@ const acumulado = (pais) => {
       }
     }`
   }).then(res => {
-    return res.data.data.LaboralAcumulado
+    return res.data.data.LaboralAcumulado.map(element => ({ ...element, skill: element.skill.toLowerCase()}))
   }).catch(error => {
     console.log(error)
     return []
@@ -48,7 +48,7 @@ const salarios = (pais) => {
       }
     }`
   }).then(res => {
-    return res.data.data.LaboralSalarios
+    return res.data.data.LaboralSalarios.map(element => ({ ...element, skill: element.skill.toLowerCase()}))
   }).catch(error => {
     console.log(error)
     return []
@@ -64,7 +64,7 @@ const otroSkill = (pais, skill) => {
                 }
             }`
   }).then(res => {
-    const datOtherSkill = res.data.data.LaboralConOtrosSkill
+    const datOtherSkill = res.data.data.LaboralConOtrosSkill.map(element => ({ ...element, skill: element.skill.toLowerCase()}))
           .filter(iter => iter.skill !== skill)
           .slice(0, 10)
           .sort((a, b) => {
