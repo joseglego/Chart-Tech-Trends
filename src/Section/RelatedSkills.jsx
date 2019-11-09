@@ -30,7 +30,8 @@ const RelatedSkills = () => {
         las ofertas laborales:</p>
 
       <SingleSelect
-        placeholder="Selecciona una skill"
+        label="Skill"
+        placeholder="Skill"
         helperText="Selecciona una skill para ver otras skill relacionadas"
         defaultValue={skill}
         options={skills}

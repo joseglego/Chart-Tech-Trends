@@ -13,6 +13,8 @@ const CompareSection = ({ skills, onChange, procesadoAcumulado, procesadoPorMes,
       <p>Estás gráficas no te ayudan mucho porque quieres comparar algo en especial?</p>
 
       <MultipleSelect
+        label="Skills"
+        placeholder="Skills"
         options={skillsData.all.skills}
         values={skills}
         onChange={onChange}
