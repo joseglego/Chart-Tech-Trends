@@ -10,7 +10,7 @@ const CompareSection = ({ skills, onChange, procesadoAcumulado, procesadoPorMes,
   useEffect(() => {
     const providedSkills = window.location.pathname.substr(1).split('-vs-');
 
-    if (providedSkills.length >= 2 && providedSkills.length !== skills.length) {
+    if (skills.length === 0 && providedSkills.length >= 2) {
       onChange(providedSkills)
     }
   });

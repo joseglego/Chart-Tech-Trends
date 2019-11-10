@@ -43,7 +43,10 @@ const Section = () => {
   const [customSkills, setCustomsSkills] = useState([]);
 
   const handleChange = (values) => {
-    setCustomsSkills(values);
+    if (values.length !== customSkills.length) {
+      window.history.pushState(null, '', `/${values.join('-vs-')}`)
+      setCustomsSkills(values);
+    }
   };
 
   useEffect(() => {
